@@ -1,5 +1,7 @@
 package com.ana.xworlds.adapter;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,9 +20,9 @@ import butterknife.ButterKnife;
  * Adapter for displaying list of worlds. Uses different layouts for phones and tablets
  */
 public class WorldsListAdapter extends RecyclerView.Adapter<WorldsListAdapter.ViewHolder> {
-    private List<World> worldList;
+    private static List<World> worldList;
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         @Bind(R.id.tvWorldName)
         TextView tvWorldName;
         @Bind(R.id.tvLanguage)
@@ -33,6 +35,17 @@ public class WorldsListAdapter extends RecyclerView.Adapter<WorldsListAdapter.Vi
         public ViewHolder(View v) {
             super(v);
             ButterKnife.bind(this, v);
+            v.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            World world = worldList.get(getAdapterPosition());
+            String url = world.mapURL;
+            if (!url.startsWith("http://") && !url.startsWith("https://"))
+                url = "http://" + url;
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            v.getContext().startActivity(browserIntent);
         }
     }
 
