@@ -3,7 +3,6 @@ package com.ana.xworlds.ui;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -177,7 +176,7 @@ public class LoginActivity extends AppCompatActivity {
                 showProgress(false);
                 if (response.isSuccess()) {
                     if (!response.body().allAvailableWorlds.isEmpty()) {
-                        startActivity(new Intent(LoginActivity.this, WorldsListActivity.class));
+                        WorldsListActivity.start(LoginActivity.this, response.body().allAvailableWorlds);
                         finish();
                     }
                 } else {

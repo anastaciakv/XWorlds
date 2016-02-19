@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:minHeight="?attr/listPreferredItemHeight"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textSize="@dimen/description_text_size" />
+
+    <TextView
+        android:id="@+id/tvWorldName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/line_margin"
+        android:layout_marginTop="@dimen/line_margin"
+        android:layout_toLeftOf="@+id/tvStatus"
+        android:textSize="@dimen/title_text_size"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/layoutAdditionalInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvWorldName"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_country"
+            android:textSize="@dimen/description_text_size" />
+
+        <TextView
+            android:id="@+id/tvCountry"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="@dimen/description_text_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_language"
+            android:textSize="@dimen/description_text_size" />
+
+        <TextView
+            android:id="@+id/tvLanguage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="@dimen/description_text_size" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/layoutAdditionalInfo"
+        android:layout_marginBottom="@dimen/line_margin"
+        android:layout_marginTop="@dimen/line_margin"
+        android:background="@color/colorDivider" />
+</RelativeLayout>

@@ -2,7 +2,7 @@ package com.ana.xworlds;
 
 import android.app.Application;
 
-import com.ana.xworlds.remote.XWorldsApi;
+import com.ana.xworlds.backend.XWorldsApi;
 import com.ana.xworlds.utils.Helper;
 import com.ana.xworlds.utils.Prefs;
 

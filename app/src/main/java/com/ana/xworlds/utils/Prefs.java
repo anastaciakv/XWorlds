@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 /**
- * Created by Ana on 2/18/2016.
+ * Class for working with Shared Preferences
  */
 public class Prefs {
     private static Prefs instance;
@@ -33,6 +33,6 @@ public class Prefs {
     }
 
     public String getDeviceId() {
-        return prefs.getString(K.deviceId, "");
+        return prefs.getString(K.deviceId, Helper.getMacAddress(context));
     }
 }

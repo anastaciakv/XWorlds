@@ -1,4 +1,4 @@
-package com.ana.xworlds.remote;
+package com.ana.xworlds.backend;
 
 import com.ana.xworlds.entity.GetAllWorldsResponse;
 
@@ -7,7 +7,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 /**
- * Created by Ana on 2/18/2016.
+ * Backend API
  */
 public interface XWorldsApi {
     String BASE_URL = "http://backend1.lordsandknights.com";

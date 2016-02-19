@@ -13,4 +13,6 @@
     <string name="title_activity_worlds_list">Game Worlds</string>
     <string name="msg_error">An error occurred</string>
     <string name="msg_internet_required">Internet connection is required</string>
+    <string name="lbl_country">Country:</string>
+    <string name="lbl_language">Language:</string>
 </resources>

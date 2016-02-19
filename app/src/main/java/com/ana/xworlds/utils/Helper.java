@@ -7,7 +7,7 @@ import android.net.wifi.WifiManager;
 import android.provider.Settings;
 
 /**
- * Created by Ana on 2/18/2016.
+ * Util methods
  */
 public class Helper {
     public static boolean isNetworkAvailable(Context context) {
@@ -20,7 +20,7 @@ public class Helper {
         WifiManager wimanager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
         String macAddress = wimanager.getConnectionInfo().getMacAddress();
         if (macAddress == null) {
-            //Device don't have mac address or wi-fi is disabled
+            //Device doesn't have mac address or wi-fi is disabled
             macAddress = Settings.Secure.getString(context.getContentResolver(),
                     Settings.Secure.ANDROID_ID);
         }
